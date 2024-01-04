@@ -9,6 +9,7 @@ using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_NETMaui.Models
 {
+    [Table("Restaurant")]
     public class Restaurant
     {
         [PrimaryKey, AutoIncrement]
@@ -21,9 +22,9 @@ namespace Proiect_NETMaui.Models
         public string Website { get; set; }
         [Range(0, 5, ErrorMessage = "Ratingul trebuie să fie între 0 și 5")]
         public double TotalRating { get; set; }
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Rezervare> Rezervari { get; set; }
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Review> Reviews { get; set; }
     }
 }

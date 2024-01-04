@@ -8,15 +8,15 @@
         Clicked="OnReviewAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"
-              Margin="20"
-              ItemSelected="OnReviewSelected">
+           Margin="20"
+           ItemSelected="OnReviewSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <StackLayout>
-                        <Label Text="{Binding Comentariu}" />
+                        <Label Text="{Binding Comentariu}" FontAttributes="Bold" />
                         <Label Text="{Binding Rating}" />
-                        <Label Text="{Binding Date}" />
+                        <Label Text="{Binding Data}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

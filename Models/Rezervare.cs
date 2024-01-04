@@ -1,15 +1,15 @@
-﻿using System;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite;
-using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_NETMaui.Models
 {
+    [Table("Rezervare")]
     public class Rezervare
     {
         [PrimaryKey, AutoIncrement]
@@ -27,8 +27,10 @@ namespace Proiect_NETMaui.Models
         [Range(1, int.MaxValue, ErrorMessage = "Numărul de persoane trebuie să fie cel puțin 1.")]
         public int NumarPersoane { get; set; }
 
-        [ManyToOne(nameof(RestaurantID))]
+        [ForeignKey(typeof(Restaurant))]
         public int? RestaurantID { get; set; }
+
+        [ManyToOne(nameof(RestaurantID))]
         public Restaurant? Restaurant { get; set; }
 
     }

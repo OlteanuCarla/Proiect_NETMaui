@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Proiect_NETMaui.Models
 {
+    [Table("Review")]
     public class Review
     {
         [PrimaryKey, AutoIncrement]
@@ -27,8 +28,9 @@ namespace Proiect_NETMaui.Models
             Data = DateTime.Now;
         }
 
-        [ManyToOne(nameof(RestaurantID))]
+        [ForeignKey(typeof(Restaurant))]
         public int? RestaurantID { get; set; }
+        [ManyToOne(nameof(RestaurantID))]
         public Restaurant? Restaurant { get; set; }
     }
 

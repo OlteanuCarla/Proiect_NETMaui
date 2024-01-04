@@ -38,7 +38,7 @@ namespace Proiect_NETMaui.Data
                 return _database.InsertAsync(restaurant);
             }
         }
-        public Task<int> DeleteShopListAsync(Restaurant restaurant)
+        public Task<int> DeleteRestaurantAsync(Restaurant restaurant)
         {
             return _database.DeleteAsync(restaurant);
         }
@@ -46,6 +46,13 @@ namespace Proiect_NETMaui.Data
         {
             return _database.Table<Review>().ToListAsync();
         }
+        public Task<Review> GetReviewAsync(int id)
+        {
+            return _database.Table<Review>()
+            .Where(i => i.ID == id)
+           .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveReviewAsync(Review review)
         {
             if (review.ID != 0)
@@ -61,9 +68,6 @@ namespace Proiect_NETMaui.Data
         {
             return _database.DeleteAsync(review);
         }
-        public Task<List<Review>> GetReviewsAsync()
-        {
-            return _database.Table<Review>().ToListAsync();
-        }
+        
     }
 }

@@ -6,11 +6,12 @@ public partial class AddReviewPage : ContentPage
 	public AddReviewPage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new Review();
+    }
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
+        //double rating = ratingBar.Rating;
         var review = (Review)BindingContext;
-        review.Data = DateTime.UtcNow;
         await App.Database.SaveReviewAsync(review);
         await Navigation.PopAsync();
     }

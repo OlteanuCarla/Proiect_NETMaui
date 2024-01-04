@@ -57,8 +57,8 @@ public partial class RestaurantDetailPage : ContentPage
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Restaurant)BindingContext;
-        await App.Database.DeleteShopListAsync(slist);
+        var restaurant = (Restaurant)BindingContext;
+        await App.Database.DeleteRestaurantAsync(restaurant);
         await Navigation.PopAsync();
     }
 }

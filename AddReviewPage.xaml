@@ -5,10 +5,11 @@
              Title="AddReviewPage">
     <StackLayout Margin="20">
         <Editor Placeholder="Add a comment for your review:"
-           Text="{Binding Description}"
+           Text="{Binding Comentariu}"
             HeightRequest="100" />
-        <Label Text="Rate the restaurant:" />
-        
+        <Entry Placeholder="Add a rating for restaurant:"
+            Text="{Binding Rating}"
+            HeightRequest="40" Keyboard="Numeric" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
