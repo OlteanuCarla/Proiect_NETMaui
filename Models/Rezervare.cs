@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_NETMaui.Models
 {
@@ -25,6 +26,8 @@ namespace Proiect_NETMaui.Models
         [Required(ErrorMessage = "Numărul de persoane este obligatoriu.")]
         [Range(1, int.MaxValue, ErrorMessage = "Numărul de persoane trebuie să fie cel puțin 1.")]
         public int NumarPersoane { get; set; }
+
+        [ManyToOne(nameof(RestaurantID))]
         public int? RestaurantID { get; set; }
         public Restaurant? Restaurant { get; set; }
 

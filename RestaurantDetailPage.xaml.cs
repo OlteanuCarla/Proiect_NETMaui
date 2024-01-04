@@ -47,18 +47,18 @@ public partial class RestaurantDetailPage : ContentPage
     }
     async void OnBookaTableButtonClicked(object sender, EventArgs e)
     {
-        var restaurant = (Restaurant)BindingContext;
-
-        // Creează un obiect Rezervare care să conțină informații despre rezervare și restaurant
-        Rezervare reservation = new Rezervare
-        {
-            RestaurantID = restaurant.ID,
-            Restaurant = restaurant
-            // Alte informații relevante despre rezervare pot fi adăugate aici
-        };
-
-        // Redirecționează către pagina de rezervare și transmite informațiile
-        await Navigation.PushAsync(new RezervarePage(reservation));
+        // Redirecționează către pagina de rezervare
+        await Navigation.PushAsync(new RezervarePage());
     }
-
+    async void OnShowReviewsButtonClicked(object sender, EventArgs e)
+    {
+        // Redirecționează către pagina de recenzii
+       await Navigation.PushAsync(new ReviewsPage());
+    }
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var slist = (Restaurant)BindingContext;
+        await App.Database.DeleteShopListAsync(slist);
+        await Navigation.PopAsync();
+    }
 }

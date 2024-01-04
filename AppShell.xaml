@@ -16,14 +16,9 @@
         ContentTemplate="{DataTemplate local:RestaurantPage}"
         />
         <ShellContent
-        Title="My Reservations"
-        ContentTemplate="{DataTemplate local:MyReservationsPage}"
-        />
-        <ShellContent
         Title="About"
         ContentTemplate="{DataTemplate local:AboutPage}"
-        />
-
+        />
     </TabBar>
 
 </Shell>

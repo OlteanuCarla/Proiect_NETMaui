@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_NETMaui.Models
 {
@@ -19,6 +20,10 @@ namespace Proiect_NETMaui.Models
         [RegularExpression(@"^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$", ErrorMessage = "URL-ul nu este valid.")]
         public string Website { get; set; }
         [Range(0, 5, ErrorMessage = "Ratingul trebuie să fie între 0 și 5")]
-        public string TotalRating { get; set; }
+        public double TotalRating { get; set; }
+        [OneToMany]
+        public List<Rezervare> Rezervari { get; set; }
+        [OneToMany]
+        public List<Review> Reviews { get; set; }
     }
 }

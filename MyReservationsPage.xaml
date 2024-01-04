@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_NETMaui.MyReservationsPage"
-             Title="MyReservationsPage"
-             >
+             Title="MyReservationsPage">
     <StackLayout>
-        <ListView x:Name="reservationsListView" ItemsSource="{Binding Reservations}">
+        <ListView x:Name="reservationsListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding Data}" />
                             <Label Text="{Binding NumarPersoane}" />
+                            <Label Text="{Binding RestaurantID}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

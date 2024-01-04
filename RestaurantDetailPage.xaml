@@ -39,6 +39,12 @@
                 <Button Text="Book a Table" Grid.Row="1" Grid.Column="0"
                 MaximumWidthRequest="200"
                 Clicked="OnBookaTableButtonClicked"></Button>
+                <Button Text="Show Reviews" Grid.Row="1" Grid.Column="1"
+                    MaximumWidthRequest="200"
+                    Clicked="OnShowReviewsButtonClicked"></Button>
+                <Button Text="Delete Restaurant" Grid.Row="3"
+                    MaximumWidthRequest="200"
+                    Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

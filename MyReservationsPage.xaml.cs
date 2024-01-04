@@ -3,19 +3,18 @@ namespace Proiect_NETMaui;
 
 public partial class MyReservationsPage : ContentPage
 {
-    public List<Rezervare> Reservations { get; set; }
+    private List<Rezervare> reservations;
 
-    public MyReservationsPage()
+    public MyReservationsPage(List<Rezervare> reservations)
     {
         InitializeComponent();
-        Reservations = new List<Rezervare>();
+        this.reservations = reservations;
         LoadReservations();
     }
 
-    private async void LoadReservations()
+    private void LoadReservations()
     {
-        //reservations = await App.Database.GetReservationsAsync();
-        Reservations = await App.Database.GetReservationsAsync(); 
-        reservationsListView.ItemsSource = Reservations;
+        // Atribuie lista de rezervări la sursa de date a ListView-ului
+        reservationsListView.ItemsSource = reservations;
     }
 }
