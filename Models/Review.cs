@@ -19,7 +19,7 @@ namespace Proiect_NETMaui.Models
         public string Comentariu { get; set; }
 
         [Range(0, 5, ErrorMessage = "Ratingul trebuie să fie între 0 și 5")]
-        public int Rating { get; set; }
+        public float Rating { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }
