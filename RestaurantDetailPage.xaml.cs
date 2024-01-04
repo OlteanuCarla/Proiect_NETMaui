@@ -47,8 +47,18 @@ public partial class RestaurantDetailPage : ContentPage
     }
     async void OnBookaTableButtonClicked(object sender, EventArgs e)
     {
-        // Redirecționează către pagina de rezervare
-        await Navigation.PushAsync(new RezervarePage());
+        var restaurant = (Restaurant)BindingContext;
+
+        // Creează un obiect Rezervare care să conțină informații despre rezervare și restaurant
+        Rezervare reservation = new Rezervare
+        {
+            RestaurantID = restaurant.ID,
+            Restaurant = restaurant
+            // Alte informații relevante despre rezervare pot fi adăugate aici
+        };
+
+        // Redirecționează către pagina de rezervare și transmite informațiile
+        await Navigation.PushAsync(new RezervarePage(reservation));
     }
 
 }
