@@ -1,4 +1,4 @@
-﻿using Microsoft.Maui.Devices.Sensors;
+﻿
 using Plugin.LocalNotification;
 using Proiect_NETMaui.Models;
 namespace Proiect_NETMaui;
@@ -11,9 +11,9 @@ public partial class RestaurantDetailPage : ContentPage
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Restaurant)BindingContext;
+        var restaurant = (Restaurant)BindingContext;
         //slist.Name = Restaurant.Name;
-        await App.Database.SaveRestaurantAsync(slist);
+        await App.Database.SaveRestaurantAsync(restaurant);
         await Navigation.PopAsync();
     }
     async void OnShowMapButtonClicked(object sender, EventArgs e)

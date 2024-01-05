@@ -10,21 +10,21 @@
             VerticalOptions="Center">
 
             <Image
-                Source="logo.jpg"
+                Source="logo.png"
                 SemanticProperties.Description="our perfect logo"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="TastyHaven"
+                Text="TastyHeaven"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Discover, Order, Enjoy!"
+                Text="Discover, Book a Table, Enjoy!"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Discover, Order, Enjoy!"
+                SemanticProperties.Description="Discover, Book a Table, Enjoy!"
                 FontSize="18"
                 HorizontalOptions="Center" />
 

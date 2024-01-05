@@ -16,6 +16,8 @@ namespace Proiect_NETMaui.Data
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Restaurant>().Wait();
             _database.CreateTableAsync<Review>().Wait();
+            _database.CreateTableAsync<Rezervare>().Wait();
+            _database.CreateTableAsync<Profile>().Wait();
         }
         public Task<List<Restaurant>> GetRestaurantAsync()
         {
@@ -68,6 +70,21 @@ namespace Proiect_NETMaui.Data
         {
             return _database.DeleteAsync(review);
         }
-        
+        public Task<int> SaveProfileAsync(Profile profile)
+        {
+            if (profile.ID != 0)
+            {
+                return _database.UpdateAsync(profile);
+            }
+            else
+            {
+                return _database.InsertAsync(profile);
+            }
+        }
+        public Task<int> DeleteProfileAsync(Profile profile)
+        {
+            return _database.DeleteAsync(profile);
+        }
+
     }
 }
