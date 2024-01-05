@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect_NETMaui.AddProfilePage"
+             Title="AddProfilePage">
+    <StackLayout Margin="20">
+        <Editor Placeholder="Enter your last name" Margin="20"
+    Text="{Binding Nume}"
+    HeightRequest="50" />
+        <Editor Placeholder="Enter your first name" Margin="20"
+    Text="{Binding Prenume}"
+    HeightRequest="50" />
+        <Editor Placeholder="Enter your phone number" Margin="20"
+     Text="{Binding Email}"
+     HeightRequest="50" />
+        <Editor Placeholder="Enter your email" Margin="20"
+     Text="{Binding NrTelefon}"
+     HeightRequest="50" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save Profile" Grid.Column="0"
+             MaximumWidthRequest="200"
+            Clicked="OnSaveButtonClicked" />
+            <Button Text="Delete Profile" Grid.Column="1"
+            MaximumWidthRequest="200"
+            Clicked="OnDeleteButtonClicked" />
+            <Button Text="Add Promo Code" Grid.Column="1"
+            MaximumWidthRequest="200"
+            Clicked="OnAddPromoCodeClicked" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

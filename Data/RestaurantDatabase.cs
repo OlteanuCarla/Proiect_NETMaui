@@ -85,6 +85,15 @@ namespace Proiect_NETMaui.Data
         {
             return _database.DeleteAsync(profile);
         }
-
+        public Task<List<Profile>> GetProfileAsync()
+        {
+            return _database.Table<Profile>().ToListAsync();
+        }
+        public Task<Profile> GetProfileAsync(int id)
+        {
+            return _database.Table<Profile>()
+            .Where(i => i.ID == id)
+           .FirstOrDefaultAsync();
+        }
     }
 }

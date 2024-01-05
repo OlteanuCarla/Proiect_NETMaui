@@ -21,7 +21,7 @@ namespace Proiect_NETMaui.Models
             // Validează rating-ul
             if (review.Rating < 0 || review.Rating > 5)
             {
-                throw new ValidationException("Ratingul trebuie să fie între 0 și 5");
+                throw new ValidationException("The rating must be between 0 and 5.");
             }
 
             // Alte validări dacă este nevoie

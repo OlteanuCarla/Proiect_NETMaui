@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Proiect_NETMaui.Models
 {
+    [Table("Profile")]
     public class Profile
     {
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
         public string Prenume { get; set; }
