@@ -13,7 +13,7 @@ public partial class RezervarePage : ContentPage
     async void OnCompleteReservationClicked(object sender, EventArgs e)
     {
         // Check if the number of persons is entered correctly
-        if (int.TryParse(numarPersoaneEntry.Text, out int numarPersoane))
+        if (int.TryParse(numarPersoaneEntry.Text, out int numarPersoane) && numarPersoane >= 1 && numarPersoane <= 15)
         {
             // Save date, time, and number of persons in the reservation object
             DateTime selectedDate = datePicker.Date;

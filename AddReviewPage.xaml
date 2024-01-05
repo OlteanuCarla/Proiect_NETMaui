@@ -9,7 +9,7 @@
             HeightRequest="100" />
         <Entry Placeholder="Add a rating for restaurant:"
             Text="{Binding Rating}"
-            HeightRequest="40" Keyboard="Numeric" />
+            HeightRequest="40" Keyboard="Numeric"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

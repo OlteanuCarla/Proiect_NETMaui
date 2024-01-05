@@ -19,7 +19,14 @@ namespace Proiect_NETMaui.Models
         public string Email { get; set; }
         public string NrTelefon { get; set; }
 
-       // public string? CodPromotional { get; set; }
+        // public string? CodPromotional { get; set; }
+        public string FormattedWelcome
+        {
+            get
+            {
+                return $"Welcome, {Nume} {Prenume}";
+            }
+        }
 
     }
 }
