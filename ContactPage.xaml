@@ -5,7 +5,7 @@
              Title="ContactPage">
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="logo.png"
+            <Image Source="logobun.png"
          SemanticProperties.Description="My Favorite Restaurant List"
          HeightRequest="64" />
             <Label FontSize="22" FontAttributes="Bold" Text="TastyHeaven" VerticalOptions="End" />

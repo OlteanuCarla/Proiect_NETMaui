@@ -22,11 +22,10 @@ public partial class ProfilePage : ContentPage
             //Profile newProfile = new Profile(); // poți încerca și await Navigation.PushAsync(new AddProfilePage());
             //AddProfilePage addProfilePage = new AddProfilePage { BindingContext = newProfile };
             //await Navigation.PushAsync(addProfilePage);
-            await Navigation.PushAsync(new AddProfilePage
-            {
-                BindingContext = new Profile()
-            });
-            profileList.Add(new Profile());
+            var newProfile = new Profile();
+            await Navigation.PushAsync(new AddProfilePage { BindingContext = newProfile });
+            profileList.Add(newProfile);
+
         }
         else
         {

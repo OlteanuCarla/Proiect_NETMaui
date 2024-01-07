@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLiteNetExtensions.Attributes;
 
 namespace Proiect_NETMaui.Models
 {
@@ -13,7 +14,6 @@ namespace Proiect_NETMaui.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-
         public string Prenume { get; set; }
         public string Nume { get; set; }
         public string Email { get; set; }

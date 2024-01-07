@@ -41,16 +41,16 @@
                 </Grid.ColumnDefinitions>
                 <Button Text="Save Restaurant" Grid.Column="0"
                 MaximumWidthRequest="200"
-                    Clicked="OnSaveButtonClicked" />
+                    Clicked="OnSaveButtonClicked"  Margin="0,0,0,10" />
                 <Button Text="Show on Map" Grid.Column="1"
                     MaximumWidthRequest="200"
-                    Clicked="OnShowMapButtonClicked"></Button>
+                    Clicked="OnShowMapButtonClicked"  Margin="0,0,0,10"></Button>
                 <Button Text="Book a Table" Grid.Row="1" Grid.Column="0"
                 MaximumWidthRequest="200"
-                Clicked="OnBookaTableButtonClicked"></Button>
+                Clicked="OnBookaTableButtonClicked"  Margin="0,0,0,10"></Button>
                 <Button Text="Show Reviews" Grid.Row="1" Grid.Column="1"
                     MaximumWidthRequest="200"
-                    Clicked="OnShowReviewsButtonClicked"></Button>
+                    Clicked="OnShowReviewsButtonClicked"  Margin="0,0,0,10"></Button>
                 <Button Text="Delete Restaurant" Grid.Row="3"
                     MaximumWidthRequest="200"
                     Clicked="OnDeleteButtonClicked" />

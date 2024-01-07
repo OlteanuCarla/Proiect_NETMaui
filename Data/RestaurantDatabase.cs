@@ -70,6 +70,16 @@ namespace Proiect_NETMaui.Data
         {
             return _database.DeleteAsync(review);
         }
+        public Task<List<Profile>> GetProfileAsync()
+        {
+            return _database.Table<Profile>().ToListAsync();
+        }
+        public Task<Profile> GetProfileAsync(int id)
+        {
+            return _database.Table<Profile>()
+            .Where(i => i.ID == id)
+           .FirstOrDefaultAsync();
+        }
         public Task<int> SaveProfileAsync(Profile profile)
         {
             if (profile.ID != 0)
@@ -81,19 +91,12 @@ namespace Proiect_NETMaui.Data
                 return _database.InsertAsync(profile);
             }
         }
-        public Task<int> DeleteProfileAsync(Profile profile)
+        public async Task<int> DeleteProfileAsync(Profile profile)
         {
-            return _database.DeleteAsync(profile);
-        }
-        public Task<List<Profile>> GetProfileAsync()
-        {
-            return _database.Table<Profile>().ToListAsync();
-        }
-        public Task<Profile> GetProfileAsync(int id)
-        {
-            return _database.Table<Profile>()
-            .Where(i => i.ID == id)
-           .FirstOrDefaultAsync();
+            System.Diagnostics.Debug.WriteLine($"Before delete operation");
+            var result = await _database.DeleteAsync(profile);
+            System.Diagnostics.Debug.WriteLine($"After delete operation. Rows affected: {result}");
+            return result;
         }
     }
 }

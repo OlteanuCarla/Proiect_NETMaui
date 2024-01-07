@@ -1,4 +1,4 @@
-using Plugin.LocalNotification;
+﻿using Plugin.LocalNotification;
 using Proiect_NETMaui.Models;
 using Xamarin.Essentials;
 namespace Proiect_NETMaui;
@@ -18,6 +18,12 @@ public partial class RezervarePage : ContentPage
             // Save date, time, and number of persons in the reservation object
             DateTime selectedDate = datePicker.Date;
             TimeSpan selectedTime = timePicker.Time;
+            // Check if the selected time is available
+            if (!IsReservationTimeAvailable(selectedDate, selectedTime))
+            {
+                DisplayAlert("Error", "Reservation time not available. Please choose a different time.", "OK");
+                return; // Stop execution if the time is not available
+            }
 
             // Example: Save the data in a reservation object (assuming you have access to this object)
             Rezervare reservation = new Rezervare
@@ -53,5 +59,10 @@ public partial class RezervarePage : ContentPage
 
         LocalNotificationCenter.Current.Show(notification);
 
+    }
+    private bool IsReservationTimeAvailable(DateTime selectedDate, TimeSpan selectedTime)
+    {
+        // Verifică dacă există deja o rezervare la aceeași dată și oră
+        return !reservations.Any(r => r.Data == selectedDate && r.Ora == selectedTime);
     }
 }

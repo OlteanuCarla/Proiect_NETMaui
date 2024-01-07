@@ -10,7 +10,7 @@
             VerticalOptions="Center">
 
             <Image
-                Source="logo.png"
+                Source="logobun.png"
                 SemanticProperties.Description="our perfect logo"
                 HeightRequest="200"
                 HorizontalOptions="Center" />

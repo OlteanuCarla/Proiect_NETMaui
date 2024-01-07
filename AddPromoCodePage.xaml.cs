@@ -41,6 +41,11 @@ public partial class AddPromoCodePage : ContentPage
         {
             // Verifică dacă codul introdus este unul dintre cele acceptate
             return code.Equals("Panoramic15", StringComparison.OrdinalIgnoreCase) ||
+                code.Equals("Klausen15", StringComparison.OrdinalIgnoreCase) ||
+                code.Equals("Baracca15", StringComparison.OrdinalIgnoreCase) ||
+                code.Equals("Toulouse15", StringComparison.OrdinalIgnoreCase) ||
+                code.Equals("LittleHanoi15", StringComparison.OrdinalIgnoreCase) ||
+                code.Equals("KupajGourmet15", StringComparison.OrdinalIgnoreCase) ||
                    code.Equals("Samsara15", StringComparison.OrdinalIgnoreCase);
         }
     }

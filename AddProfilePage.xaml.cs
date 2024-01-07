@@ -6,7 +6,7 @@ public partial class AddProfilePage : ContentPage
 	public AddProfilePage()
 	{
 		InitializeComponent();
-
+        BindingContext = new Profile();
     }
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
@@ -18,6 +18,7 @@ public partial class AddProfilePage : ContentPage
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
         var profile = (Profile)BindingContext;
+        System.Diagnostics.Debug.WriteLine($"Trying to delete profile: {profile.Nume} {profile.Prenume}");
         await App.Database.DeleteProfileAsync(profile);
         await Navigation.PopAsync();
     }

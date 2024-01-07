@@ -37,10 +37,10 @@
             </Grid.ColumnDefinitions>
             <Button Text="Save Profile" Grid.Column="0"
              MaximumWidthRequest="200"
-            Clicked="OnSaveButtonClicked" />
+            Clicked="OnSaveButtonClicked" Margin="0,0,0,10"/>
             <Button Text="Delete Profile" Grid.Column="1"
             MaximumWidthRequest="200"
-            Clicked="OnDeleteButtonClicked" />
+            Clicked="OnDeleteButtonClicked" Margin="0,0,0,10"/>
             <Button Text="Add Promo Code" Grid.Row="1" Grid.Column="0"
             MaximumWidthRequest="200"
             Clicked="OnAddPromoCodeClicked" />
