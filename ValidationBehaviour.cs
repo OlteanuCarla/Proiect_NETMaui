@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Proiect_NETMaui
-{
+{ 
     class ValidationBehaviour : Behavior<Editor>
     {
         protected override void OnAttachedTo(Editor entry)

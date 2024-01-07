@@ -17,8 +17,7 @@
                     <StackLayout>
                         <Label Text="{Binding FormattedWelcome}" FontAttributes="Bold"/>
                         <Label Text="Click to see your profile" FontSize="Small" TextDecorations="Underline" TextColor="Blue" />
-
-                        </StackLayout>
+                    </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
